@@ -3,8 +3,8 @@ version: "3.7"
 services:
 
   db:
-# Postgres DB Container Version 11.3
-    image: postgres:11.3
+# Postgres DB Container Version 11.4
+    image: postgres:11.4
     networks:
       - polls_net
     volumes:
@@ -25,12 +25,21 @@ services:
     env_file:
       - project-files/deployment.env
 
+  app2:
+    image: pythonincontainers/django-polls:nginx
+    networks:
+      - polls_net
+    env_file:
+      - project-files/deployment.env
+
   proxy:
     image: pythonincontainers/mynginx:latest
     networks:
       - polls_net
     ports:
       - "8000:8000"
+    volumes:
+      - ./project-files/mynginx-conf-lb.conf:/etc/nginx/conf.d/mysite_nginx.conf
 
 networks:
   polls_net:
