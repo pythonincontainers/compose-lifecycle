@@ -33,3 +33,4 @@ services:
               "rm -rf /clone/*;
                pg_basebackup -h localhost -U pollsuser -D /clone"]
     network_mode: "service:db"
+ 
