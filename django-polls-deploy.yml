@@ -39,7 +39,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./project-files/mynginx-conf-lb.conf:/etc/nginx/conf.d/mysite_nginx.conf
+      - ./project-files/mysite_nginx_lb.conf:/etc/nginx/conf.d/mysite_nginx.conf
 
 networks:
   polls_net:
