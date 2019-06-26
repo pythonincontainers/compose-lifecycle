@@ -14,3 +14,4 @@ services:
       - ./project-files/mysite_nginx_lb.conf:/etc/nginx/conf.d/mysite_nginx.conf
     depends_on:
       - app2
+ 
