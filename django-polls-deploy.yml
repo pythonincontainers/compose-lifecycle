@@ -3,8 +3,8 @@ version: "3.7"
 services:
 
   db:
-# Postgres DB Container Version 11.4
-    image: postgres:11.4
+# Postgres DB Container Version 11.3
+    image: postgres:11.3
     networks:
       - polls_net
     volumes:
